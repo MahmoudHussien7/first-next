@@ -7,6 +7,23 @@ module.exports = {
   ],
   theme: {
     extend: {
+      keyframes: {
+        wiggle: {
+          "0%, 100%": { transform: "rotate(-3deg)" },
+          "50%": { transform: "rotate(3deg)" },
+        },
+        fadeIn: {
+          '0%': { opacity: 0, transform: 'translateY(20px)' },
+          '100%': { opacity: 1, transform: 'translateY(0)' },
+        },
+      },
+      animation: {
+        fadeIn: 'fadeIn 1s ease-in-out forwards',
+      
+      },
+      animation: {
+        wiggle: "wiggle 1s ease-in-out infinite",
+      },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":
@@ -14,5 +31,5 @@ module.exports = {
       },
     },
   },
-  plugins: [],
+  plugins: [require("daisyui")],
 };
